@@ -9,5 +9,6 @@ public:
 	Board();
 	~Board();
 	vector<char> GetBoard();
+	void MakeMove(int position);
 };
 

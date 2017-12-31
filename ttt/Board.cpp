@@ -19,3 +19,10 @@ vector<char> Board::GetBoard()
 {
 	return board;
 }
+
+void Board::MakeMove(int position)
+{
+	if (board[position]) {
+		board[position] = 'x';
+	}
+}

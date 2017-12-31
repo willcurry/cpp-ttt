@@ -4,9 +4,16 @@
 
 using namespace testing;
 
-TEST(Board, TestName) {
+TEST(Board, BoardIsCreated) {
 	Board board;
-	ASSERT_THAT(board.GetBoard(), ElementsAre('-', '-', '-', 
-											  '-', '-', '-', 
-											  '-', '-', '-'));
+	ASSERT_THAT(board.GetBoard(), ElementsAre(
+		'-', '-', '-', 
+		'-', '-', '-', 
+		'-', '-', '-'));
+}
+
+TEST(Board, MoveIsMade) {
+	Board board;
+	board.MakeMove(0);
+	ASSERT_EQ(board.GetBoard()[0], 'x');
 }
