@@ -2,12 +2,14 @@
 #include "Board.h"
 
 vector<char> board(9);
+char activePlayer;
 
 Board::Board()
 {
 	for (int i = 0; i < 9; i++) {
 		board[i] = '-';
 	}
+	activePlayer = 'x';
 }
 
 
@@ -23,6 +25,16 @@ vector<char> Board::GetBoard()
 void Board::MakeMove(int position)
 {
 	if (board[position]) {
-		board[position] = 'x';
+		board[position] = activePlayer;
+	}
+	SwitchPlayers();
+}
+
+void Board::SwitchPlayers()
+{
+	if (activePlayer == 'x') {
+		activePlayer = 'o';
+	} else {
+		activePlayer = 'x';
 	}
 }

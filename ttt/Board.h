@@ -10,5 +10,7 @@ public:
 	~Board();
 	vector<char> GetBoard();
 	void MakeMove(int position);
+private:
+	void SwitchPlayers();
 };
 
