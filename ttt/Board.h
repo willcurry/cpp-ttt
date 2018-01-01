@@ -19,5 +19,8 @@ private:
 	bool HasWinningDiagonal();
 	bool HasWinningRightDiagonal();
 	bool HasWinningLeftDiagonal();
+	bool ContainsOnlyOnePlayer(vector<int> row);
+	void InitialiseBoard();
+	void InitialiseRows();
 };
 
