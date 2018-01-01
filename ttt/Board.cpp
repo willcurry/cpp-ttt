@@ -7,7 +7,6 @@ char activePlayer;
 
 Board::Board()
 {
-	winningFormations.reserve(8);
 	InitialiseBoard();
 	activePlayer = 'x';
 }
@@ -28,10 +27,8 @@ void Board::InitialiseBoard()
 void Board::InitialiseRows()
 {
 	vector<vector<int>> rows;
-	rows.reserve(3);
 	for (int i = 0; i < 9; i = i + 3) {
 		vector<int> row;
-		row.reserve(3);
 		for (int j = i; j < i + 3; j++) {
 			row.push_back(j);
 		}
@@ -43,10 +40,8 @@ void Board::InitialiseRows()
 void Board::InitialiseColumns()
 {
 	vector<vector<int>> columns;
-	columns.reserve(3);
 	for (int i = 0; i < 3; i++) {
 		vector<int> column;
-		column.reserve(3);
 		for (int j = i; j < 9; j = j + 3) {
 			column.push_back(j);
 		}
@@ -58,7 +53,6 @@ void Board::InitialiseColumns()
 void Board::InitialiseDiagonals()
 {
 	vector<vector<int>> diagonals;
-	diagonals.reserve(2);
 	diagonals.push_back(GetLeftDiagonal());
 	diagonals.push_back(GetRightDiagonal());
 	winningFormations.push_back(diagonals);
@@ -67,7 +61,6 @@ void Board::InitialiseDiagonals()
 vector<int> Board::GetLeftDiagonal()
 {
 	vector<int> leftDiagonal;
-	leftDiagonal.reserve(3);
 	for (int i = 3; i > 0; i--) {
 		int position = i * 3 - i;
 		leftDiagonal.push_back(position);
@@ -78,7 +71,6 @@ vector<int> Board::GetLeftDiagonal()
 vector<int> Board::GetRightDiagonal()
 {
 	vector<int> rightDiagonal;
-	rightDiagonal.reserve(3);
 	for (int i = 0; i < 3; i++) {
 		int position = i * 3 + i;
 		rightDiagonal.push_back(position);
