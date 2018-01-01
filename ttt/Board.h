@@ -22,7 +22,7 @@ private:
 	void InitialiseRows();
 	void InitialiseColumns();
 	void InitialiseDiagonals();
-	void InitialiseLeftDiagonal();
-	void InitialiseRightDiagonal();
+	vector<int> GetLeftDiagonal();
+	vector<int> GetRightDiagonal();
 };
 
