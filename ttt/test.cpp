@@ -34,6 +34,12 @@ TEST(Board, PlayerSwitches) {
 	ASSERT_EQ(board.GetBoard()[1], 'o');
 }
 
+TEST(Board, KnowIfAPositionIsEmpty) {
+	Board board;
+	board.MakeMove(0);
+	ASSERT_FALSE(board.PositionIsEmpty(0));
+}
+
 TEST(Board, WinningRow) {
 	Board board;
 	MakeXWin(board);

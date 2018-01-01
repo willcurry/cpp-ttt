@@ -36,15 +36,19 @@ bool Board::HasWinningRow()
 		char player;
 		for (int j = i; j < i + 3; j++) {
 			player = board[j];
-			char currentPosition = board[j];
-			if (currentPosition == '-') break;
-			if (currentPosition == player) {
+			if (PositionIsEmpty(j)) break;
+			if (board[j] == player) {
 				count++;
 			}
 		}
 		if (count == 3) return true;
 	}
 	return false;
+}
+
+bool Board::PositionIsEmpty(int position)
+{
+	return board[position] == '-';
 }
 
 void Board::SwitchPlayers()
