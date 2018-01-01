@@ -51,18 +51,18 @@ TEST(Board, KnowIfAPositionIsEmpty) {
 TEST(Board, WinningRow) {
 	Board board;
 	MakeXWinRow(board);
-	ASSERT_TRUE(board.HasWinningRow());
+	ASSERT_TRUE(board.IsWon());
 }
 
 TEST(Board, WinningColumn) {
 	Board board;
 	MakeXWinColumn(board);
-	ASSERT_TRUE(board.HasWinningColumn());
+	ASSERT_TRUE(board.IsWon());
 }
 
 TEST(Board, KnowsWhenThereIsNoWinner) {
 	Board board;
 	board.MakeMove(2);
 	board.MakeMove(1);
-	ASSERT_FALSE(board.HasWinningRow());
+	ASSERT_FALSE(board.IsWon());
 }

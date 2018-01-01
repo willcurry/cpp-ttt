@@ -68,6 +68,11 @@ bool Board::PositionIsEmpty(int position)
 	return board[position] == '-';
 }
 
+bool Board::IsWon()
+{
+	return HasWinningRow() || HasWinningColumn();
+}
+
 void Board::SwitchPlayers()
 {
 	if (activePlayer == 'x') {

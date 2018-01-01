@@ -10,10 +10,11 @@ public:
 	~Board();
 	vector<char> GetBoard();
 	void MakeMove(int position);
-	bool HasWinningRow();
-	bool HasWinningColumn();
 	bool PositionIsEmpty(int position);
+	bool IsWon();
 private:
 	void SwitchPlayers();
+	bool HasWinningColumn();
+	bool HasWinningRow();
 };
 
