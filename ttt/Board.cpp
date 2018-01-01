@@ -3,11 +3,13 @@
 
 vector<char> board(9);
 vector<vector<int>> rows;
+vector<vector<int>> columns;
 char activePlayer;
 
 Board::Board()
 {
 	rows.reserve(3);
+	columns.reserve(3);
 	InitialiseBoard();
 	activePlayer = 'x';
 }
@@ -22,6 +24,7 @@ void Board::InitialiseBoard()
 		board[i] = '-';
 	}
 	InitialiseRows();
+	InitialiseColumns();
 }
 
 void Board::InitialiseRows()
@@ -33,6 +36,18 @@ void Board::InitialiseRows()
 			row.push_back(j);
 		}
 		rows.push_back(row);
+	}
+}
+
+void Board::InitialiseColumns()
+{
+	for (int i = 0; i < 3; i++) {
+		vector<int> column;
+		column.reserve(3);
+		for (int j = i; j < 9; j = j + 3) {
+			column.push_back(j);
+		}
+		columns.push_back(column);
 	}
 }
 
@@ -49,11 +64,11 @@ void Board::MakeMove(int position)
 	SwitchPlayers();
 }
 
-bool Board::ContainsOnlyOnePlayer(vector<int> row)
+bool Board::ContainsOnlyOnePlayer(vector<int> positions)
 {
-	char player = board[row[0]];
-	for (int i = 0; i < row.size(); i++) {
-		int position = row[i];
+	char player = board[positions[0]];
+	for (int i = 0; i < positions.size(); i++) {
+		int position = positions[i];
 		if (PositionIsEmpty(position) || board[position] != player)
 			return false;
 	}
@@ -64,6 +79,15 @@ bool Board::HasWinningRow()
 {
 	for (int i = 0; i < rows.size(); i++) {
 		if (ContainsOnlyOnePlayer(rows[i])) 
+			return true;
+	}
+	return false;
+}
+
+bool Board::HasWinningColumn()
+{
+	for (int i = 0; i < columns.size(); i++) {
+		if (ContainsOnlyOnePlayer(columns[i])) 
 			return true;
 	}
 	return false;
@@ -102,22 +126,6 @@ bool Board::HasWinningLeftDiagonal()
 	}
 	if (count == 3) return true;
 	else return false;
-}
-
-bool Board::HasWinningColumn()
-{
-	for (int i = 0; i < 3; i++) {
-		int count = 0;
-		char player = board[i];
-		for (int j = i; j < 9; j = j + 3) {
-			if (PositionIsEmpty(j)) break;
-			if (board[j] == player) {
-				count++;
-			}
-		}
-		if (count == 3) return true;
-	}
-	return false;
 }
 
 bool Board::PositionIsEmpty(int position)

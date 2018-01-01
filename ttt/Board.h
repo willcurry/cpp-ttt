@@ -22,5 +22,6 @@ private:
 	bool ContainsOnlyOnePlayer(vector<int> row);
 	void InitialiseBoard();
 	void InitialiseRows();
+	void InitialiseColumns();
 };
 
