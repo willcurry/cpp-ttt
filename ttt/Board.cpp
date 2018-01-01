@@ -11,7 +11,7 @@ Board::Board()
 {
 	rows.reserve(3);
 	columns.reserve(3);
-	diagonals.reserve(3);
+	diagonals.reserve(2);
 	InitialiseBoard();
 	activePlayer = 'x';
 }
