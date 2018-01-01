@@ -17,11 +17,12 @@ private:
 	bool HasWinningColumn();
 	bool HasWinningRow();
 	bool HasWinningDiagonal();
-	bool HasWinningRightDiagonal();
-	bool HasWinningLeftDiagonal();
 	bool ContainsOnlyOnePlayer(vector<int> row);
 	void InitialiseBoard();
 	void InitialiseRows();
 	void InitialiseColumns();
+	void InitialiseDiagonals();
+	void InitialiseLeftDiagonal();
+	void InitialiseRightDiagonal();
 };
 

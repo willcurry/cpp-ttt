@@ -4,12 +4,14 @@
 vector<char> board(9);
 vector<vector<int>> rows;
 vector<vector<int>> columns;
+vector<vector<int>> diagonals;
 char activePlayer;
 
 Board::Board()
 {
 	rows.reserve(3);
 	columns.reserve(3);
+	diagonals.reserve(3);
 	InitialiseBoard();
 	activePlayer = 'x';
 }
@@ -25,6 +27,7 @@ void Board::InitialiseBoard()
 	}
 	InitialiseRows();
 	InitialiseColumns();
+	InitialiseDiagonals();
 }
 
 void Board::InitialiseRows()
@@ -49,6 +52,34 @@ void Board::InitialiseColumns()
 		}
 		columns.push_back(column);
 	}
+}
+
+void Board::InitialiseDiagonals()
+{
+	InitialiseLeftDiagonal();
+	InitialiseRightDiagonal();
+}
+
+void Board::InitialiseLeftDiagonal()
+{
+	vector<int> leftDiagonal;
+	leftDiagonal.reserve(3);
+	for (int i = 3; i > 0; i--) {
+		int position = i * 3 - i;
+		leftDiagonal.push_back(position);
+	}
+	diagonals.push_back(leftDiagonal);
+}
+
+void Board::InitialiseRightDiagonal()
+{
+	vector<int> rightDiagonal;
+	rightDiagonal.reserve(3);
+	for (int i = 0; i < 3; i++) {
+		int position = i * 3 + i;
+		rightDiagonal.push_back(position);
+	}
+	diagonals.push_back(rightDiagonal);
 }
 
 vector<char> Board::GetBoard()
@@ -95,37 +126,11 @@ bool Board::HasWinningColumn()
 
 bool Board::HasWinningDiagonal()
 {
-	return HasWinningRightDiagonal() || HasWinningLeftDiagonal();
-}
-
-bool Board::HasWinningRightDiagonal()
-{
-	int count = 0;
-	char player = board[0];
-	for (int i = 0; i < 3; i++) {
-		int position = i * 3 + i;
-		if (PositionIsEmpty(position)) break;
-		if (board[position] == player) {
-			count++;
-		}
+	for (int i = 0; i < diagonals.size(); i++) {
+		if (ContainsOnlyOnePlayer(diagonals[i])) 
+			return true;
 	}
-	if (count == 3) return true;
-	else return false;
-}
-
-bool Board::HasWinningLeftDiagonal()
-{
-	int count = 0;
-	char player = board[2];
-	for (int i = 3; i > 0; i--) {
-		int position = i * 3 - i;
-		if (PositionIsEmpty(position)) break;
-		if (board[position] == player) {
-			count++;
-		}
-	}
-	if (count == 3) return true;
-	else return false;
+	return false;
 }
 
 bool Board::PositionIsEmpty(int position)
