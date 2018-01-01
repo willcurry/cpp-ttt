@@ -16,5 +16,6 @@ private:
 	void SwitchPlayers();
 	bool HasWinningColumn();
 	bool HasWinningRow();
+	bool HasWinningDiagonal();
 };
 

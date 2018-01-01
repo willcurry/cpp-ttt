@@ -20,6 +20,14 @@ void MakeXWinColumn(Board board) {
 	board.MakeMove(6);
 }
 
+void MakeXWinRightDiagonal(Board board) {
+	board.MakeMove(0);
+	board.MakeMove(1);
+	board.MakeMove(4);
+	board.MakeMove(6);
+	board.MakeMove(8);
+}
+
 TEST(Board, BoardIsCreated) {
 	Board board;
 	ASSERT_THAT(board.GetBoard(), ElementsAre(
@@ -57,6 +65,12 @@ TEST(Board, WinningRow) {
 TEST(Board, WinningColumn) {
 	Board board;
 	MakeXWinColumn(board);
+	ASSERT_TRUE(board.IsWon());
+}
+
+TEST(Board, WinningRightDiagonal) {
+	Board board;
+	MakeXWinRightDiagonal(board);
 	ASSERT_TRUE(board.IsWon());
 }
 

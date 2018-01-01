@@ -46,6 +46,21 @@ bool Board::HasWinningRow()
 	return false;
 }
 
+bool Board::HasWinningDiagonal()
+{
+	int count = 0;
+	char player = board[0];
+	for (int i = 0; i < 3; i++) {
+		int position = i * 3 + i;
+		if (PositionIsEmpty(position)) break;
+		if (board[position] == player) {
+			count++;
+		}
+	}
+	if (count == 3) return true;
+	else return false;
+}
+
 bool Board::HasWinningColumn()
 {
 	for (int i = 0; i < 3; i++) {
@@ -70,7 +85,7 @@ bool Board::PositionIsEmpty(int position)
 
 bool Board::IsWon()
 {
-	return HasWinningRow() || HasWinningColumn();
+	return HasWinningRow() || HasWinningColumn() || HasWinningDiagonal();
 }
 
 void Board::SwitchPlayers()
