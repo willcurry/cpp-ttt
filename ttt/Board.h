@@ -10,6 +10,7 @@ public:
 	~Board();
 	vector<char> GetBoard();
 	void MakeMove(int position);
+	bool HasWinningRow();
 private:
 	void SwitchPlayers();
 };

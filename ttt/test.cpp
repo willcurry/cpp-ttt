@@ -4,6 +4,14 @@
 
 using namespace testing;
 
+void MakeXWin(Board board) {
+	board.MakeMove(0);
+	board.MakeMove(8);
+	board.MakeMove(1);
+	board.MakeMove(7);
+	board.MakeMove(2);
+}
+
 TEST(Board, BoardIsCreated) {
 	Board board;
 	ASSERT_THAT(board.GetBoard(), ElementsAre(
@@ -24,4 +32,17 @@ TEST(Board, PlayerSwitches) {
 	board.MakeMove(1);
 	ASSERT_EQ(board.GetBoard()[0], 'x');
 	ASSERT_EQ(board.GetBoard()[1], 'o');
+}
+
+TEST(Board, WinningRow) {
+	Board board;
+	MakeXWin(board);
+	ASSERT_TRUE(board.HasWinningRow());
+}
+
+TEST(Board, KnowsWhenThereIsNoWinner) {
+	Board board;
+	board.MakeMove(2);
+	board.MakeMove(1);
+	ASSERT_FALSE(board.HasWinningRow());
 }
