@@ -48,10 +48,30 @@ bool Board::HasWinningRow()
 
 bool Board::HasWinningDiagonal()
 {
+	return HasWinningRightDiagonal() || HasWinningLeftDiagonal();
+}
+
+bool Board::HasWinningRightDiagonal()
+{
 	int count = 0;
 	char player = board[0];
 	for (int i = 0; i < 3; i++) {
 		int position = i * 3 + i;
+		if (PositionIsEmpty(position)) break;
+		if (board[position] == player) {
+			count++;
+		}
+	}
+	if (count == 3) return true;
+	else return false;
+}
+
+bool Board::HasWinningLeftDiagonal()
+{
+	int count = 0;
+	char player = board[2];
+	for (int i = 3; i > 0; i--) {
+		int position = i * 3 - i;
 		if (PositionIsEmpty(position)) break;
 		if (board[position] == player) {
 			count++;

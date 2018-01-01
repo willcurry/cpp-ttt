@@ -17,5 +17,7 @@ private:
 	bool HasWinningColumn();
 	bool HasWinningRow();
 	bool HasWinningDiagonal();
+	bool HasWinningRightDiagonal();
+	bool HasWinningLeftDiagonal();
 };
 
