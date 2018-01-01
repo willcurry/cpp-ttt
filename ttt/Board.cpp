@@ -46,6 +46,23 @@ bool Board::HasWinningRow()
 	return false;
 }
 
+bool Board::HasWinningColumn()
+{
+	for (int i = 0; i < 3; i++) {
+		int count = 0;
+		char player;
+		for (int j = i; j < 9; j = j + 3) {
+			player = board[j];
+			if (PositionIsEmpty(j)) break;
+			if (board[j] == player) {
+				count++;
+			}
+		}
+		if (count == 3) return true;
+	}
+	return false;
+}
+
 bool Board::PositionIsEmpty(int position)
 {
 	return board[position] == '-';

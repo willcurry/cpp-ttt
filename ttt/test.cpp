@@ -4,12 +4,20 @@
 
 using namespace testing;
 
-void MakeXWin(Board board) {
+void MakeXWinRow(Board board) {
 	board.MakeMove(0);
 	board.MakeMove(8);
 	board.MakeMove(1);
 	board.MakeMove(7);
 	board.MakeMove(2);
+}
+
+void MakeXWinColumn(Board board) {
+	board.MakeMove(0);
+	board.MakeMove(1);
+	board.MakeMove(3);
+	board.MakeMove(8);
+	board.MakeMove(6);
 }
 
 TEST(Board, BoardIsCreated) {
@@ -42,8 +50,14 @@ TEST(Board, KnowIfAPositionIsEmpty) {
 
 TEST(Board, WinningRow) {
 	Board board;
-	MakeXWin(board);
+	MakeXWinRow(board);
 	ASSERT_TRUE(board.HasWinningRow());
+}
+
+TEST(Board, WinningColumn) {
+	Board board;
+	MakeXWinColumn(board);
+	ASSERT_TRUE(board.HasWinningColumn());
 }
 
 TEST(Board, KnowsWhenThereIsNoWinner) {

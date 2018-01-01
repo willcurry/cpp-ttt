@@ -11,6 +11,7 @@ public:
 	vector<char> GetBoard();
 	void MakeMove(int position);
 	bool HasWinningRow();
+	bool HasWinningColumn();
 	bool PositionIsEmpty(int position);
 private:
 	void SwitchPlayers();
