@@ -26,7 +26,7 @@ vector<char> Board::GetBoard()
 	return board;
 }
 
-void Board::MakeMove(int position)
+void Board::PlaceMark(int position)
 {
 	if (board[position]) {
 		board[position] = activePlayer;

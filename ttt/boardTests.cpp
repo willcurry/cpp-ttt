@@ -5,35 +5,35 @@
 using namespace testing;
 
 void MakeXWinRow(Board& board) {
-	board.MakeMove(0);
-	board.MakeMove(8);
-	board.MakeMove(1);
-	board.MakeMove(7);
-	board.MakeMove(2);
+	board.PlaceMark(0);
+	board.PlaceMark(8);
+	board.PlaceMark(1);
+	board.PlaceMark(7);
+	board.PlaceMark(2);
 }
 
 void MakeXWinColumn(Board& board) {
-	board.MakeMove(0);
-	board.MakeMove(1);
-	board.MakeMove(3);
-	board.MakeMove(8);
-	board.MakeMove(6);
+	board.PlaceMark(0);
+	board.PlaceMark(1);
+	board.PlaceMark(3);
+	board.PlaceMark(8);
+	board.PlaceMark(6);
 }
 
 void MakeXWinRightDiagonal(Board& board) {
-	board.MakeMove(0);
-	board.MakeMove(1);
-	board.MakeMove(4);
-	board.MakeMove(6);
-	board.MakeMove(8);
+	board.PlaceMark(0);
+	board.PlaceMark(1);
+	board.PlaceMark(4);
+	board.PlaceMark(6);
+	board.PlaceMark(8);
 }
 
 void MakeXWinLeftDiagonal(Board& board) {
-	board.MakeMove(2);
-	board.MakeMove(1);
-	board.MakeMove(4);
-	board.MakeMove(8);
-	board.MakeMove(6);
+	board.PlaceMark(2);
+	board.PlaceMark(1);
+	board.PlaceMark(4);
+	board.PlaceMark(8);
+	board.PlaceMark(6);
 }
 
 TEST(Board, BoardIsCreated) {
@@ -46,21 +46,21 @@ TEST(Board, BoardIsCreated) {
 
 TEST(Board, MoveIsMade) {
 	Board board;
-	board.MakeMove(0);
+	board.PlaceMark(0);
 	ASSERT_EQ(board.GetBoard()[0], 'x');
 }
 
 TEST(Board, PlayerSwitches) {
 	Board board;
-	board.MakeMove(0);
-	board.MakeMove(1);
+	board.PlaceMark(0);
+	board.PlaceMark(1);
 	ASSERT_EQ(board.GetBoard()[0], 'x');
 	ASSERT_EQ(board.GetBoard()[1], 'o');
 }
 
 TEST(Board, KnowIfAPositionIsEmpty) {
 	Board board;
-	board.MakeMove(0);
+	board.PlaceMark(0);
 	ASSERT_FALSE(board.PositionIsEmpty(0));
 }
 
@@ -90,7 +90,7 @@ TEST(Board, WinningLeftDiagonal) {
 
 TEST(Board, KnowsWhenThereIsNoWinner) {
 	Board board;
-	board.MakeMove(2);
-	board.MakeMove(1);
+	board.PlaceMark(2);
+	board.PlaceMark(1);
 	ASSERT_FALSE(board.IsWon());
 }
