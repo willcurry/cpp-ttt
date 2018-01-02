@@ -4,7 +4,7 @@
 
 using namespace testing;
 
-void MakeXWinRow(Board board) {
+void MakeXWinRow(Board& board) {
 	board.MakeMove(0);
 	board.MakeMove(8);
 	board.MakeMove(1);
@@ -12,7 +12,7 @@ void MakeXWinRow(Board board) {
 	board.MakeMove(2);
 }
 
-void MakeXWinColumn(Board board) {
+void MakeXWinColumn(Board& board) {
 	board.MakeMove(0);
 	board.MakeMove(1);
 	board.MakeMove(3);
@@ -20,7 +20,7 @@ void MakeXWinColumn(Board board) {
 	board.MakeMove(6);
 }
 
-void MakeXWinRightDiagonal(Board board) {
+void MakeXWinRightDiagonal(Board& board) {
 	board.MakeMove(0);
 	board.MakeMove(1);
 	board.MakeMove(4);
@@ -28,7 +28,7 @@ void MakeXWinRightDiagonal(Board board) {
 	board.MakeMove(8);
 }
 
-void MakeXWinLeftDiagonal(Board board) {
+void MakeXWinLeftDiagonal(Board& board) {
 	board.MakeMove(2);
 	board.MakeMove(1);
 	board.MakeMove(4);

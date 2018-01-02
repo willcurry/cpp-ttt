@@ -15,5 +15,7 @@ private:
 	void AddDiagonals();
 	vector<int> GetLeftDiagonal();
 	vector<int> GetRightDiagonal();
+
+	vector<vector<vector<int>>> combinations;
 };
 

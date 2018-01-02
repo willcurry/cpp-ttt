@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "Combinations.h"
 
-vector<vector<vector<int>>> combinations;
-
 Combinations::Combinations()
 {
 	AddRows();

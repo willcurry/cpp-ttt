@@ -2,10 +2,6 @@
 #include "Board.h"
 #include "Combinations.h"
 
-vector<char> board(9);
-vector<vector<vector<int>>> winningFormations;
-char activePlayer;
-
 Board::Board()
 {
 	InitialiseBoard();
@@ -20,6 +16,7 @@ Board::~Board()
 
 void Board::InitialiseBoard()
 {
+	board.resize(9);
 	for (int i = 0; i < 9; i++)
 		board[i] = '-';
 }
