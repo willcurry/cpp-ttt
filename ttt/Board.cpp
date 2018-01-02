@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Board.h"
+#include "Combinations.h"
 
 vector<char> board(9);
 vector<vector<vector<int>>> winningFormations;
@@ -9,6 +10,8 @@ Board::Board()
 {
 	InitialiseBoard();
 	activePlayer = 'x';
+	Combinations combinations;
+	winningFormations = combinations.GetAll();
 }
 
 Board::~Board()
@@ -19,63 +22,6 @@ void Board::InitialiseBoard()
 {
 	for (int i = 0; i < 9; i++)
 		board[i] = '-';
-	InitialiseRows();
-	InitialiseColumns();
-	InitialiseDiagonals();
-}
-
-void Board::InitialiseRows()
-{
-	vector<vector<int>> rows;
-	for (int i = 0; i < 9; i = i + 3) {
-		vector<int> row;
-		for (int j = i; j < i + 3; j++) {
-			row.push_back(j);
-		}
-		rows.push_back(row);
-	}
-	winningFormations.push_back(rows);
-}
-
-void Board::InitialiseColumns()
-{
-	vector<vector<int>> columns;
-	for (int i = 0; i < 3; i++) {
-		vector<int> column;
-		for (int j = i; j < 9; j = j + 3) {
-			column.push_back(j);
-		}
-		columns.push_back(column);
-	}
-	winningFormations.push_back(columns);
-}
-
-void Board::InitialiseDiagonals()
-{
-	vector<vector<int>> diagonals;
-	diagonals.push_back(GetLeftDiagonal());
-	diagonals.push_back(GetRightDiagonal());
-	winningFormations.push_back(diagonals);
-}
-
-vector<int> Board::GetLeftDiagonal()
-{
-	vector<int> leftDiagonal;
-	for (int i = 3; i > 0; i--) {
-		int position = i * 3 - i;
-		leftDiagonal.push_back(position);
-	}
-	return leftDiagonal;
-}
-
-vector<int> Board::GetRightDiagonal()
-{
-	vector<int> rightDiagonal;
-	for (int i = 0; i < 3; i++) {
-		int position = i * 3 + i;
-		rightDiagonal.push_back(position);
-	}
-	return rightDiagonal;
 }
 
 vector<char> Board::GetBoard()

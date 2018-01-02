@@ -14,15 +14,7 @@ public:
 	bool IsWon();
 private:
 	void SwitchPlayers();
-	bool HasWinningColumn();
-	bool HasWinningRow();
-	bool HasWinningDiagonal();
 	bool ContainsOnlyOnePlayer(vector<int> row);
 	void InitialiseBoard();
-	void InitialiseRows();
-	void InitialiseColumns();
-	void InitialiseDiagonals();
-	vector<int> GetLeftDiagonal();
-	vector<int> GetRightDiagonal();
 };
 
