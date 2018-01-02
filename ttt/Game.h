@@ -4,8 +4,10 @@
 class Game
 {
 public:
-	Game(Board board);
+	Game(Board& board);
 	~Game();
 	void MakeMove(int position);
+private:
+	Board *currentBoard;
 };
 

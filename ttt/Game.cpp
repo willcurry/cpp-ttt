@@ -1,11 +1,9 @@
 #include "pch.h"
 #include "Game.h"
 
-Board board;
-
-Game::Game(Board board)
+Game::Game(Board& board)
 {
-	board = board;
+	currentBoard = &board;
 }
 
 Game::~Game()
@@ -14,4 +12,5 @@ Game::~Game()
 
 void Game::MakeMove(int position)
 {
+	currentBoard->MakeMove(position);
 }
