@@ -1,5 +1,4 @@
-#include "pch.h"
-#include "Board.h"
+#include "..\ttt-core\Board.h"
 #include "TestUtils.h"
 
 Board CreateBoardWithRowWin() {

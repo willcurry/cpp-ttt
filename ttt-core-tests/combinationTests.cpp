@@ -1,5 +1,4 @@
-#include "pch.h"
-#include "Combinations.h"
+#include "..\ttt-core\Combinations.h"
 #include "TestUtils.h"
 
 TEST(Combinations, Has3Combinations) {
