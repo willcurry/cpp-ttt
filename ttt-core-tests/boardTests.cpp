@@ -33,10 +33,6 @@ Board CreateBoardWithLeftDiagonalWin() {
 	return TestUtils::CreateBoardStateWithMarks(positions, 'x');
 }
 
-void SetUpTestCase() {
-	Board board(TestUtils::CreateBoardState());
-}
-
 TEST(Board, BoardIsCreated) {
 	Board board(TestUtils::CreateBoardState());
 	ASSERT_THAT(board.GetState(), ElementsAre(

@@ -44,8 +44,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="boardTests.cpp" />
-    <ClCompile Include="combinationTests.cpp" />
+    <ClCompile Include="BoardTests.cpp" />
+    <ClCompile Include="CombinationsTests.cpp" />
     <ClCompile Include="TestUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
