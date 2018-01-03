@@ -26,10 +26,10 @@ vector<char> Board::GetBoard()
 	return board;
 }
 
-void Board::PlaceMark(int position)
+void Board::PlaceMark(int position, char mark)
 {
 	if (board[position]) {
-		board[position] = activePlayer;
+		board[position] = mark;
 	}
 	SwitchPlayers();
 }

@@ -9,7 +9,7 @@ public:
 	Board();
 	~Board();
 	vector<char> GetBoard();
-	void PlaceMark(int position);
+	void PlaceMark(int position, char mark);
 	bool PositionIsEmpty(int position);
 	bool IsWon();
 private:

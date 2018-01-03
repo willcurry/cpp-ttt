@@ -12,5 +12,5 @@ Game::~Game()
 
 void Game::MakeMove(int position)
 {
-	currentBoard->PlaceMark(position);
+	currentBoard->PlaceMark(position, 'x');
 }
