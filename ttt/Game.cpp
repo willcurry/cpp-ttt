@@ -7,9 +7,7 @@ Game::Game(Board& board)
 	activePlayer = 'x';
 }
 
-Game::~Game()
-{
-}
+Game::~Game() {}
 
 void Game::MakeMove(int position)
 {
