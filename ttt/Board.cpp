@@ -16,11 +16,13 @@ vector<char> Board::GetState()
 	return state;
 }
 
-void Board::PlaceMark(int position, char mark)
+Board Board::PlaceMark(int position, char mark)
 {
-	if (state[position]) {
-		state[position] = mark;
-	}
+	vector<char> newState(9);
+	newState.swap(state);
+	newState[position] = mark;
+	Board board(newState);
+	return board;
 }
 
 bool Board::ContainsOnlyOnePlayer(vector<int> positions)

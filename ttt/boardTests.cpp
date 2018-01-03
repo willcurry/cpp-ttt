@@ -50,8 +50,8 @@ TEST(Board, BoardIsCreated) {
 
 TEST(Board, MarkIsPlaced) {
 	Board board(TestUtils::CreateBoardState());
-	board.PlaceMark(0, 'x');
-	ASSERT_EQ(board.GetState()[0], 'x');
+	Board newBoard = board.PlaceMark(0, 'x');
+	ASSERT_EQ(newBoard.GetState()[0], 'x');
 }
 
 TEST(Board, KnowIfAPositionIsEmpty) {
@@ -82,7 +82,6 @@ TEST(Board, WinningLeftDiagonal) {
 
 TEST(Board, KnowsWhenThereIsNoWinner) {
 	Board board(TestUtils::CreateBoardState());
-	board.PlaceMark(2, 'x');
-	board.PlaceMark(1, 'x');
-	ASSERT_FALSE(board.IsWon());
+	Board newBoard = board.PlaceMark(1, 'x');
+	ASSERT_FALSE(newBoard.IsWon());
 }
