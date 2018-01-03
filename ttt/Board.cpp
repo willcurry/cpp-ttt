@@ -2,40 +2,33 @@
 #include "Board.h"
 #include "Combinations.h"
 
-Board::Board()
+Board::Board(vector<char> state)
 {
-	InitialiseBoard();
+	this->state = state;
 	Combinations combinations;
 	winningFormations = combinations.GetAll();
 }
 
 Board::~Board(){}
 
-void Board::InitialiseBoard()
+vector<char> Board::GetState()
 {
-	board.resize(9);
-	for (int i = 0; i < 9; i++)
-		board[i] = '-';
-}
-
-vector<char> Board::GetBoard()
-{
-	return board;
+	return state;
 }
 
 void Board::PlaceMark(int position, char mark)
 {
-	if (board[position]) {
-		board[position] = mark;
+	if (state[position]) {
+		state[position] = mark;
 	}
 }
 
 bool Board::ContainsOnlyOnePlayer(vector<int> positions)
 {
-	char player = board[positions[0]];
+	char player = state[positions[0]];
 	for (int i = 0; i < positions.size(); i++) {
 		int position = positions[i];
-		if (PositionIsEmpty(position) || board[position] != player)
+		if (PositionIsEmpty(position) || state[position] != player)
 			return false;
 	}
 	return true;
@@ -43,7 +36,7 @@ bool Board::ContainsOnlyOnePlayer(vector<int> positions)
 
 bool Board::PositionIsEmpty(int position)
 {
-	return board[position] == '-';
+	return state[position] == '-';
 }
 
 bool Board::IsWon()

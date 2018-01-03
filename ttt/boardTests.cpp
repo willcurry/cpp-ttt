@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Board.h"
 #include "gmock/gmock.h"
+#include "TestUtils.h"
 
 using namespace testing;
 
@@ -28,52 +29,56 @@ void MakeXWinLeftDiagonal(Board& board) {
 	board.PlaceMark(6, 'x');
 }
 
+void SetUpTestCase() {
+	Board board(TestUtils::CreateBoardState());
+}
+
 TEST(Board, BoardIsCreated) {
-	Board board;
-	ASSERT_THAT(board.GetBoard(), ElementsAre(
+	Board board(TestUtils::CreateBoardState());
+	ASSERT_THAT(board.GetState(), ElementsAre(
 		'-', '-', '-', 
 		'-', '-', '-', 
 		'-', '-', '-'));
 }
 
 TEST(Board, MarkIsPlaced) {
-	Board board;
+	Board board(TestUtils::CreateBoardState());
 	board.PlaceMark(0, 'x');
-	ASSERT_EQ(board.GetBoard()[0], 'x');
+	ASSERT_EQ(board.GetState()[0], 'x');
 }
 
 TEST(Board, KnowIfAPositionIsEmpty) {
-	Board board;
+	Board board(TestUtils::CreateBoardState());
 	board.PlaceMark(0, 'x');
 	ASSERT_FALSE(board.PositionIsEmpty(0));
 }
 
 TEST(Board, WinningRow) {
-	Board board;
+	Board board(TestUtils::CreateBoardState());
 	MakeXWinRow(board);
 	ASSERT_TRUE(board.IsWon());
 }
 
 TEST(Board, WinningColumn) {
-	Board board;
+	Board board(TestUtils::CreateBoardState());
 	MakeXWinColumn(board);
 	ASSERT_TRUE(board.IsWon());
 }
 
 TEST(Board, WinningRightDiagonal) {
-	Board board;
+	Board board(TestUtils::CreateBoardState());
 	MakeXWinRightDiagonal(board);
 	ASSERT_TRUE(board.IsWon());
 }
 
 TEST(Board, WinningLeftDiagonal) {
-	Board board;
+	Board board(TestUtils::CreateBoardState());
 	MakeXWinLeftDiagonal(board);
 	ASSERT_TRUE(board.IsWon());
 }
 
 TEST(Board, KnowsWhenThereIsNoWinner) {
-	Board board;
+	Board board(TestUtils::CreateBoardState());
 	board.PlaceMark(2, 'x');
 	board.PlaceMark(1, 'x');
 	ASSERT_FALSE(board.IsWon());

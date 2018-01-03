@@ -6,17 +6,16 @@ using std::vector;
 class Board
 {
 public:
-	Board();
+	Board(vector<char> state);
 	~Board();
-	vector<char> GetBoard();
+	vector<char> GetState();
 	void PlaceMark(int position, char mark);
 	bool PositionIsEmpty(int position);
 	bool IsWon();
 private:
 	bool ContainsOnlyOnePlayer(vector<int> row);
-	void InitialiseBoard();
 
 	vector<vector<vector<int>>> winningFormations;
-	vector<char> board;
+	vector<char> state;
 };
 
