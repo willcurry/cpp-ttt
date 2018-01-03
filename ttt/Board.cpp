@@ -18,8 +18,7 @@ vector<char> Board::GetState()
 
 Board Board::PlaceMark(int position, char mark)
 {
-	vector<char> newState(9);
-	newState.swap(state);
+	vector<char> newState(state);
 	newState[position] = mark;
 	Board board(newState);
 	return board;

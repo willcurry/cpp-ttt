@@ -54,8 +54,8 @@ TEST(Board, MarkIsPlaced) {
 
 TEST(Board, KnowIfAPositionIsEmpty) {
 	Board board(TestUtils::CreateBoardState());
-	board.PlaceMark(0, 'x');
-	ASSERT_FALSE(board.PositionIsEmpty(0));
+	Board newBoard = board.PlaceMark(0, 'x');
+	ASSERT_FALSE(newBoard.PositionIsEmpty(0));
 }
 
 TEST(Board, WinningRow) {
