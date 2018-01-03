@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ttt-console-tests", "ttt-co
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ttt-console", "ttt-console\ttt-console.vcxproj", "{3DC9A8E4-DCA3-4023-B527-9B3AC413A509}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ttt-test-utilities", "ttt-test-utilities\ttt-test-utilities.vcxproj", "{DC1EB087-718A-4068-BAEE-CA117F4609D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{3DC9A8E4-DCA3-4023-B527-9B3AC413A509}.Release|x64.Build.0 = Release|x64
 		{3DC9A8E4-DCA3-4023-B527-9B3AC413A509}.Release|x86.ActiveCfg = Release|Win32
 		{3DC9A8E4-DCA3-4023-B527-9B3AC413A509}.Release|x86.Build.0 = Release|Win32
+		{DC1EB087-718A-4068-BAEE-CA117F4609D7}.Debug|x64.ActiveCfg = Debug|x64
+		{DC1EB087-718A-4068-BAEE-CA117F4609D7}.Debug|x64.Build.0 = Debug|x64
+		{DC1EB087-718A-4068-BAEE-CA117F4609D7}.Debug|x86.ActiveCfg = Debug|Win32
+		{DC1EB087-718A-4068-BAEE-CA117F4609D7}.Debug|x86.Build.0 = Debug|Win32
+		{DC1EB087-718A-4068-BAEE-CA117F4609D7}.Release|x64.ActiveCfg = Release|x64
+		{DC1EB087-718A-4068-BAEE-CA117F4609D7}.Release|x64.Build.0 = Release|x64
+		{DC1EB087-718A-4068-BAEE-CA117F4609D7}.Release|x86.ActiveCfg = Release|Win32
+		{DC1EB087-718A-4068-BAEE-CA117F4609D7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

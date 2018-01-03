@@ -1,5 +1,8 @@
 #include "..\ttt-core\Board.h"
-#include "TestUtils.h"
+#include "..\ttt-test-utilities\TestUtils.h"
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
+using namespace testing;
 
 Board CreateBoardWithRowWin() {
 	vector<int> positions(3);

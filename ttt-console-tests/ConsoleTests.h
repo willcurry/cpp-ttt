@@ -12,6 +12,5 @@ class ConsoleTests
 public:
 	ConsoleTests();
 	~ConsoleTests();
-	static vector<char> CreateBoardState();
 };
 

@@ -39,6 +39,9 @@
     <ProjectReference Include="..\ttt-core\ttt-core.vcxproj">
       <Project>{058b0be0-a501-4726-9926-54d533ce245a}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\ttt-test-utilities\ttt-test-utilities.vcxproj">
+      <Project>{dc1eb087-718a-4068-baee-ca117f4609d7}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -46,10 +49,6 @@
   <ItemGroup>
     <ClCompile Include="BoardTests.cpp" />
     <ClCompile Include="CombinationsTests.cpp" />
-    <ClCompile Include="TestUtils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="TestUtils.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
