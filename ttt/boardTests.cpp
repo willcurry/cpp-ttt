@@ -2,8 +2,6 @@
 #include "Board.h"
 #include "TestUtils.h"
 
-using namespace testing;
-
 Board CreateBoardWithRowWin() {
 	vector<int> positions(3);
 	positions.push_back(0);

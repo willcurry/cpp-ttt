@@ -3,6 +3,7 @@
 #include "gmock/gmock.h"
 
 using std::vector;
+using namespace testing;
 
 class TestUtils
 {

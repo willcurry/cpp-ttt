@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "Combinations.h"
-#include "gmock/gmock.h"
-
-using namespace testing;
+#include "TestUtils.h"
 
 TEST(Combinations, Has3Combinations) {
 	Combinations combinations;
