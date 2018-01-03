@@ -4,28 +4,36 @@
 
 using namespace testing;
 
-void MakeXWinRow(Board& board) {
-	board.PlaceMark(0, 'x');
-	board.PlaceMark(1, 'x');
-	board.PlaceMark(2, 'x');
+Board CreateBoardWithRowWin() {
+	vector<int> positions(3);
+	positions.push_back(0);
+	positions.push_back(1);
+	positions.push_back(2);
+	return TestUtils::CreateBoardStateWithMarks(positions, 'x');
 }
 
-void MakeXWinColumn(Board& board) {
-	board.PlaceMark(0, 'x');
-	board.PlaceMark(3, 'x');
-	board.PlaceMark(6, 'x');
+Board CreateBoardWithColumnWin() {
+	vector<int> positions(3);
+	positions.push_back(0);
+	positions.push_back(3);
+	positions.push_back(6);
+	return TestUtils::CreateBoardStateWithMarks(positions, 'x');
 }
 
-void MakeXWinRightDiagonal(Board& board) {
-	board.PlaceMark(0, 'x');
-	board.PlaceMark(4, 'x');
-	board.PlaceMark(8, 'x');
+Board CreateBoardWithRightDiagonalWin() {
+	vector<int> positions(3);
+	positions.push_back(0);
+	positions.push_back(4);
+	positions.push_back(8);
+	return TestUtils::CreateBoardStateWithMarks(positions, 'x');
 }
 
-void MakeXWinLeftDiagonal(Board& board) {
-	board.PlaceMark(2, 'x');
-	board.PlaceMark(4, 'x');
-	board.PlaceMark(6, 'x');
+Board CreateBoardWithLeftDiagonalWin() {
+	vector<int> positions(3);
+	positions.push_back(2);
+	positions.push_back(4);
+	positions.push_back(6);
+	return TestUtils::CreateBoardStateWithMarks(positions, 'x');
 }
 
 void SetUpTestCase() {
@@ -53,26 +61,22 @@ TEST(Board, KnowIfAPositionIsEmpty) {
 }
 
 TEST(Board, WinningRow) {
-	Board board(TestUtils::CreateBoardState());
-	MakeXWinRow(board);
+	Board board(CreateBoardWithRowWin());
 	ASSERT_TRUE(board.IsWon());
 }
 
 TEST(Board, WinningColumn) {
-	Board board(TestUtils::CreateBoardState());
-	MakeXWinColumn(board);
+	Board board(CreateBoardWithColumnWin());
 	ASSERT_TRUE(board.IsWon());
 }
 
 TEST(Board, WinningRightDiagonal) {
-	Board board(TestUtils::CreateBoardState());
-	MakeXWinRightDiagonal(board);
+	Board board(CreateBoardWithRightDiagonalWin());
 	ASSERT_TRUE(board.IsWon());
 }
 
 TEST(Board, WinningLeftDiagonal) {
-	Board board(TestUtils::CreateBoardState());
-	MakeXWinLeftDiagonal(board);
+	Board board(CreateBoardWithLeftDiagonalWin());
 	ASSERT_TRUE(board.IsWon());
 }
 
