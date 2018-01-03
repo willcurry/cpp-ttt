@@ -5,14 +5,11 @@
 Board::Board()
 {
 	InitialiseBoard();
-	activePlayer = 'x';
 	Combinations combinations;
 	winningFormations = combinations.GetAll();
 }
 
-Board::~Board()
-{
-}
+Board::~Board(){}
 
 void Board::InitialiseBoard()
 {
@@ -31,7 +28,6 @@ void Board::PlaceMark(int position, char mark)
 	if (board[position]) {
 		board[position] = mark;
 	}
-	SwitchPlayers();
 }
 
 bool Board::ContainsOnlyOnePlayer(vector<int> positions)
@@ -59,13 +55,4 @@ bool Board::IsWon()
 		}
 	}
 	return false;
-}
-
-void Board::SwitchPlayers()
-{
-	if (activePlayer == 'x') {
-		activePlayer = 'o';
-	} else {
-		activePlayer = 'x';
-	}
 }

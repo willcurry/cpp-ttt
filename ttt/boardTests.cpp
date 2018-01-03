@@ -6,33 +6,25 @@ using namespace testing;
 
 void MakeXWinRow(Board& board) {
 	board.PlaceMark(0, 'x');
-	board.PlaceMark(8, 'x');
 	board.PlaceMark(1, 'x');
-	board.PlaceMark(7, 'x');
 	board.PlaceMark(2, 'x');
 }
 
 void MakeXWinColumn(Board& board) {
 	board.PlaceMark(0, 'x');
-	board.PlaceMark(1, 'x');
 	board.PlaceMark(3, 'x');
-	board.PlaceMark(8, 'x');
 	board.PlaceMark(6, 'x');
 }
 
 void MakeXWinRightDiagonal(Board& board) {
 	board.PlaceMark(0, 'x');
-	board.PlaceMark(1, 'x');
 	board.PlaceMark(4, 'x');
-	board.PlaceMark(6, 'x');
 	board.PlaceMark(8, 'x');
 }
 
 void MakeXWinLeftDiagonal(Board& board) {
 	board.PlaceMark(2, 'x');
-	board.PlaceMark(1, 'x');
 	board.PlaceMark(4, 'x');
-	board.PlaceMark(8, 'x');
 	board.PlaceMark(6, 'x');
 }
 
@@ -48,14 +40,6 @@ TEST(Board, MarkIsPlaced) {
 	Board board;
 	board.PlaceMark(0, 'x');
 	ASSERT_EQ(board.GetBoard()[0], 'x');
-}
-
-TEST(Board, PlayerSwitches) {
-	Board board;
-	board.PlaceMark(0, 'x');
-	board.PlaceMark(1, 'x');
-	ASSERT_EQ(board.GetBoard()[0], 'x');
-	ASSERT_EQ(board.GetBoard()[1], 'o');
 }
 
 TEST(Board, KnowIfAPositionIsEmpty) {

@@ -8,6 +8,8 @@ public:
 	~Game();
 	void MakeMove(int position);
 private:
+	void SwitchPlayers();
 	Board *currentBoard;
+	char activePlayer;
 };
 
