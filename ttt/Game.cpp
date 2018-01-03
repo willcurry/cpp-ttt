@@ -13,7 +13,7 @@ Game::~Game()
 
 void Game::MakeMove(int position)
 {
-	currentBoard->PlaceMark(position, activePlayer);
+	*currentBoard = currentBoard->PlaceMark(position, activePlayer);
 	SwitchPlayers();
 }
 
