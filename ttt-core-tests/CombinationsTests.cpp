@@ -1,8 +1,6 @@
 #include "..\ttt-core\Combinations.h"
 #include "..\ttt-test-utilities\TestUtils.h"
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
-using namespace testing;
+#include "pch.h"
 
 
 TEST(Combinations, Has3Combinations) {
