@@ -20,6 +20,11 @@ vector<char> Game::GetBoardState()
 	return currentBoard->GetState();
 }
 
+bool Game::IsOver()
+{
+	return currentBoard->IsWon();
+}
+
 void Game::SwitchPlayers()
 {
 	if (activePlayer == 'x')

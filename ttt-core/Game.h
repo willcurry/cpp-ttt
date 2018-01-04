@@ -8,6 +8,7 @@ public:
 	~Game();
 	void MakeMove(int position);
 	vector<char> GetBoardState();
+	bool IsOver();
 private:
 	void SwitchPlayers();
 	Board *currentBoard;
