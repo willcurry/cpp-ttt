@@ -11,8 +11,11 @@ using std::string;
 class ConsoleGameType : public GameType
 {
 public:
-	ConsoleGameType();
+	ConsoleGameType(ostream& output);
 	~ConsoleGameType();
-	void DisplayBoard(vector<char> state, ostream& output);
+	void DisplayBoard(vector<char> state);
+	void Start();
+private:
+	ostream& output;
 };
 

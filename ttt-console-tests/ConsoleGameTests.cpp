@@ -3,8 +3,8 @@
 #include "tests.h"
 
 TEST(ConsoleGame, DisplaysBoard) {
-	ConsoleGameType consoleGame;
 	std::stringstream output;
-	consoleGame.DisplayBoard(TestUtils::CreateBoardState(), output);
+	ConsoleGameType consoleGame(output);
+	consoleGame.DisplayBoard(TestUtils::CreateBoardState());
 	EXPECT_EQ(output.str(), "---------");
 }
