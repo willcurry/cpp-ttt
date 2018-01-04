@@ -8,6 +8,6 @@ class GameType
 public:
 	GameType();
 	~GameType();
-	void DisplayBoard(vector<char> state);
+	virtual void DisplayBoard(vector<char> state);
 };
 
