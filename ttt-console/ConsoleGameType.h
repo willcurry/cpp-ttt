@@ -12,12 +12,13 @@ using std::string;
 class ConsoleGameType : public GameType
 {
 public:
-	ConsoleGameType(ostream& output, istream& input);
+	ConsoleGameType(Game game, ostream& output, istream& input);
 	~ConsoleGameType();
 	void DisplayBoard(vector<char> state);
 	void Start();
 private:
 	ostream& output;
 	istream& input;
+	Game game;
 };
 

@@ -4,7 +4,9 @@
 
 TEST(ConsoleGame, DisplaysBoard) {
 	std::stringstream stream;
-	ConsoleGameType consoleGame(stream, stream);
+	Board board(TestUtils::CreateBoardState());
+	Game game(board);
+	ConsoleGameType consoleGame(game, stream, stream);
 	consoleGame.DisplayBoard(TestUtils::CreateBoardState());
 	EXPECT_EQ(stream.str(), "---------");
 }

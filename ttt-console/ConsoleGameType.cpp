@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "ConsoleGameType.h"
 
-ConsoleGameType::ConsoleGameType(ostream &output, istream &input) : output(output), input(input) {}
+ConsoleGameType::ConsoleGameType(Game game, ostream &output, istream &input) : output(output), input(input), game(game) {}
 
 ConsoleGameType::~ConsoleGameType()
 {
