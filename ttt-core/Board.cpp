@@ -2,9 +2,9 @@
 #include "Board.h"
 #include "Combinations.h"
 
-Board::Board(vector<char> state)
+Board::Board(vector<char> boardState)
 {
-	this->state = state;
+	this->state = boardState;
 	Combinations combinations;
 	winningFormations = combinations.GetAll();
 }

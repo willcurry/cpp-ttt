@@ -1,6 +1,6 @@
 #include "..\ttt-console\ConsoleGameType.h"
 #include "..\ttt-test-utilities\TestUtils.h"
-#include "pch.h"
+#include "tests.h"
 
 TEST(ConsoleGame, DisplaysBoard) {
 	ConsoleGameType consoleGame;

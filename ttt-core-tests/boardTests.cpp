@@ -1,6 +1,6 @@
 #include "..\ttt-core\Board.h"
 #include "..\ttt-test-utilities\TestUtils.h"
-#include "pch.h"
+#include "tests.h"
 
 Board CreateBoardWithRowWin() {
 	vector<int> positions(3);
