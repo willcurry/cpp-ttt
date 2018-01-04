@@ -5,7 +5,7 @@ GameType::GameType(){}
 
 GameType::~GameType(){}
 
-void GameType::DisplayBoard(vector<char> state)
+void GameType::DisplayBoard()
 {
 }
 

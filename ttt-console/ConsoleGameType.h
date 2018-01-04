@@ -14,7 +14,7 @@ class ConsoleGameType : public GameType
 public:
 	ConsoleGameType(Game game, ostream& output, istream& input);
 	~ConsoleGameType();
-	void DisplayBoard(vector<char> state);
+	void DisplayBoard();
 	void Start();
 private:
 	ostream& output;

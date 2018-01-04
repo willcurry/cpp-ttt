@@ -7,11 +7,11 @@ ConsoleGameType::~ConsoleGameType()
 {
 }
 
-void ConsoleGameType::DisplayBoard(vector<char> state)
+void ConsoleGameType::DisplayBoard()
 {
 	string board;
-	for (int i = 0; i < state.size(); i++) {
-		board += state[i];
+	for (int i = 0; i < game.GetBoardState().size(); i++) {
+		board += game.GetBoardState()[i];
 	}
 	output << board;
 }
