@@ -50,3 +50,12 @@ bool Board::IsWon()
 	}
 	return false;
 }
+
+bool Board::IsDrawn()
+{
+	for (int i = 0; i < state.size(); i++) {
+		if (PositionIsEmpty(i))
+			return false;
+	}
+	return true;
+}

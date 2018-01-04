@@ -12,9 +12,9 @@ public:
 	Board PlaceMark(int position, char mark);
 	bool PositionIsEmpty(int position);
 	bool IsWon();
+	bool IsDrawn();
 private:
 	bool ContainsOnlyOnePlayer(vector<int> row);
-
 	vector<vector<vector<int>>> winningFormations;
 	vector<char> state;
 };
