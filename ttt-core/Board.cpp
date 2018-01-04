@@ -20,8 +20,8 @@ Board Board::PlaceMark(int position, char mark)
 {
 	vector<char> newState(state);
 	newState[position] = mark;
-	Board board(newState);
-	return board;
+	Board newBoard(newState);
+	return newBoard;
 }
 
 bool Board::ContainsOnlyOnePlayer(vector<int> positions)

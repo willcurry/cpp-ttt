@@ -15,6 +15,11 @@ void Game::MakeMove(int position)
 	SwitchPlayers();
 }
 
+vector<char> Game::GetBoardState()
+{
+	return currentBoard->GetState();
+}
+
 void Game::SwitchPlayers()
 {
 	if (activePlayer == 'x')

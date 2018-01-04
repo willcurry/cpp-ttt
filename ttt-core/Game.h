@@ -7,6 +7,7 @@ public:
 	Game(Board& board);
 	~Game();
 	void MakeMove(int position);
+	vector<char> GetBoardState();
 private:
 	void SwitchPlayers();
 	Board *currentBoard;
