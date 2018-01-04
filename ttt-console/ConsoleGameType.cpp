@@ -18,4 +18,10 @@ void ConsoleGameType::DisplayBoard()
 
 void ConsoleGameType::Start()
 {
+	while (!game.IsOver()) {
+		DisplayBoard();
+		int userInput;
+		input >> userInput;
+		game.MakeMove(userInput);
+	}
 }

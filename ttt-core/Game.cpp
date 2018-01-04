@@ -22,7 +22,7 @@ vector<char> Game::GetBoardState()
 
 bool Game::IsOver()
 {
-	return currentBoard->IsWon();
+	return currentBoard->IsWon() || currentBoard->IsDrawn();
 }
 
 void Game::SwitchPlayers()
