@@ -94,3 +94,13 @@ TEST(Board, KnowsWhenThereIsADraw) {
 	Board board(TestUtils::CreateBoardStateWithMarks(filledBoard, 'x'));
 	ASSERT_TRUE(board.IsDrawn());
 }
+
+TEST(Board, KnowsWhenThereIsAWinOn4x4) {
+	vector<int> rowWin;
+	rowWin.push_back(0);
+	rowWin.push_back(1);
+	rowWin.push_back(2);
+	rowWin.push_back(3);
+	Board board(TestUtils::CreateBoardStateWithMarks(rowWin, 'x'), 4);
+	ASSERT_TRUE(board.IsWon());
+}

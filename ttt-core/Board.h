@@ -6,7 +6,7 @@ using std::vector;
 class Board
 {
 public:
-	Board(vector<char> state);
+	Board(vector<char> state, int size = 3);
 	~Board();
 	vector<char> GetState();
 	Board PlaceMark(int position, char mark);
@@ -17,5 +17,6 @@ private:
 	bool ContainsOnlyOnePlayer(vector<int> row);
 	vector<vector<vector<int>>> winningFormations;
 	vector<char> state;
+	int size;
 };
 

@@ -6,7 +6,7 @@ using std::vector;
 class Combinations
 {
 public:
-	Combinations();
+	Combinations(int size = 3);
 	~Combinations();
 	vector<vector<vector<int>>> GetAll();
 private:
@@ -15,7 +15,7 @@ private:
 	void AddDiagonals();
 	vector<int> GetLeftDiagonal();
 	vector<int> GetRightDiagonal();
-
+	int size;
 	vector<vector<vector<int>>> combinations;
 };
 

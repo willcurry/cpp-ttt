@@ -26,3 +26,13 @@ vector<char> TestUtils::CreateBoardStateWithMarks(vector<int> positions, char ma
 	}
 	return board;
 }
+
+vector<char> TestUtils::Create4x4BoardStateWithMarks(vector<int> positions, char mark)
+{
+	vector<char> board(16);
+	board = CreateBoardState();
+	for (int i = 0; i < positions.size(); i++) {
+		board[positions[i]] = mark;
+	}
+	return board;
+}
