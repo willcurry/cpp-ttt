@@ -5,15 +5,15 @@
 class Game
 {
 public:
-	Game(Board& board, Player playerOne, Player playerTwo);
+	Game(Board& board, Player& playerOne, Player& playerTwo);
 	~Game();
-	void MakeMove(int position);
+	void MakeMove();
 	vector<char> GetBoardState();
 	bool IsOver();
 private:
 	void SwitchPlayers();
 	Board* currentBoard;
-	Player activePlayer;
-	Player inactivePlayer;
+	Player* activePlayer;
+	Player* inactivePlayer;
 };
 

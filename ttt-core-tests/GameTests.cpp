@@ -1,5 +1,6 @@
 #include "..\ttt-core\Game.h"
 #include "..\ttt-test-utilities\TestUtils.h"
+#include "TestPlayer.h"
 #include "tests.h"
 
 TEST(Game, MakeMoveUpdatesBoard) {
@@ -7,17 +8,23 @@ TEST(Game, MakeMoveUpdatesBoard) {
 	Player playerOne('x');
 	Player playerTwo('o');
 	Game game(board, playerOne, playerTwo);
-	game.MakeMove(0);
+	game.MakeMove();
 	ASSERT_EQ(game.GetBoardState()[0], 'x');
 }
 
 TEST(Game, SwitchesPlayersAfterMove) {
 	Board board(TestUtils::CreateBoardState());
-	Player playerOne('x');
-	Player playerTwo('o');
+
+	vector<int> playerOneMoves;
+	playerOneMoves.push_back(0);
+	TestPlayer playerOne('x', playerOneMoves);
+	vector<int> playerTwoMoves;
+	playerTwoMoves.push_back(1);
+	TestPlayer playerTwo('o', playerTwoMoves);
+
 	Game game(board, playerOne, playerTwo);
-	game.MakeMove(0);
-	game.MakeMove(1);
+	game.MakeMove();
+	game.MakeMove();
 	ASSERT_EQ(game.GetBoardState()[1], 'o');
 }
 

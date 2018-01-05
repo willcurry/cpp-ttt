@@ -22,6 +22,6 @@ void ConsoleGameType::Start()
 		DisplayBoard();
 		int userInput;
 		input >> userInput;
-		game.MakeMove(userInput);
+		game.MakeMove();
 	}
 }

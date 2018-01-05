@@ -4,7 +4,8 @@ class Player
 public:
 	Player(char mark);
 	~Player();
-	char GetMark();
+	virtual char GetMark();
+	virtual int NextMove();
 private:
 	char mark;
 };

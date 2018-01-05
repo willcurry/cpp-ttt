@@ -16,3 +16,8 @@ char Player::GetMark()
 {
 	return this->mark;
 }
+
+int Player::NextMove()
+{
+	return 0;
+}
