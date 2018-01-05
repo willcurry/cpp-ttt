@@ -49,6 +49,7 @@
   <ItemGroup>
     <ClCompile Include="BoardTests.cpp" />
     <ClCompile Include="CombinationsTests.cpp" />
+    <ClCompile Include="ComputerPlayerTests.cpp" />
     <ClCompile Include="GameTests.cpp" />
     <ClCompile Include="TestPlayer.cpp" />
   </ItemGroup>
