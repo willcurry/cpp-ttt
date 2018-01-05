@@ -9,6 +9,7 @@ public:
 	~ComputerPlayer();
 	int NextMove(Board& board);
 private:
+	char OppositeMark();
 	vector<int> AvailablePositions(Board& board);
 };
 

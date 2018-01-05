@@ -9,7 +9,23 @@ ComputerPlayer::~ComputerPlayer()
 
 int ComputerPlayer::NextMove(Board& board)
 {
-	return AvailablePositions(board)[0];
+	vector<int> positions = AvailablePositions(board);
+	for (int i = 0; i < positions.size(); i++) {
+		Board newBoard = board.PlaceMark(positions[i], OppositeMark());
+		if (newBoard.IsWon()) {
+			return positions[i];
+		}
+	}
+	return positions[0];
+}
+
+char ComputerPlayer::OppositeMark()
+{
+	char mark = this->GetMark();
+	if (mark == 'x')
+		return 'o';
+	else
+		return 'x';
 }
 
 vector<int> ComputerPlayer::AvailablePositions(Board& board)
