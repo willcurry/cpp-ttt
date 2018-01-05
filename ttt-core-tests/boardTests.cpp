@@ -104,3 +104,9 @@ TEST(Board, KnowsWhenThereIsAWinOn4x4) {
 	Board board(TestUtils::CreateBoardStateWithMarks(rowWin, 'x'), 4);
 	ASSERT_TRUE(board.IsWon());
 }
+
+TEST(Board, KnowsLastMove) {
+	Board board(TestUtils::CreateBoardState());
+	Board newBoard = board.PlaceMark(1, 'x');
+	ASSERT_EQ(newBoard.GetLastMove(), 'x');
+}

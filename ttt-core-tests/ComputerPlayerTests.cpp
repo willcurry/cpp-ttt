@@ -11,21 +11,6 @@ TEST(ComputerPlayer, BlocksRowWin) {
 	ASSERT_EQ(player.NextMove(board), 2);
 }
 
-TEST(ComputerPlayer, GoesInTheOnlyFreePosition) {
-	vector<int> moves;
-	moves.push_back(0);
-	moves.push_back(1);
-	moves.push_back(2);
-	moves.push_back(3);
-	moves.push_back(4);
-	moves.push_back(5);
-	moves.push_back(6);
-	moves.push_back(7);
-	Board board(TestUtils::CreateBoardStateWithMarks(moves, 'x'));
-	ComputerPlayer player('o');
-	ASSERT_EQ(player.NextMove(board), 8);
-}
-
 TEST(ComputerPlayer, BlocksColumnWin) {
 	vector<int> moves;
 	moves.push_back(0);
@@ -40,6 +25,33 @@ TEST(ComputerPlayer, BlocksDiagonalWin) {
 	moves.push_back(0);
 	moves.push_back(4);
 	Board board(TestUtils::CreateBoardStateWithMarks(moves, 'x'));
+	ComputerPlayer player('o');
+	ASSERT_EQ(player.NextMove(board), 8);
+}
+
+TEST(ComputerPlayer, GoesForRowWin) {
+	vector<int> moves;
+	moves.push_back(0);
+	moves.push_back(1);
+	Board board(TestUtils::CreateBoardStateWithMarks(moves, 'o'));
+	ComputerPlayer player('o');
+	ASSERT_EQ(player.NextMove(board), 2);
+}
+
+TEST(ComputerPlayer, GoesForColumnWin) {
+	vector<int> moves;
+	moves.push_back(0);
+	moves.push_back(3);
+	Board board(TestUtils::CreateBoardStateWithMarks(moves, 'o'));
+	ComputerPlayer player('o');
+	ASSERT_EQ(player.NextMove(board), 6);
+}
+
+TEST(ComputerPlayer, GoesForDiagonalWin) {
+	vector<int> moves;
+	moves.push_back(0);
+	moves.push_back(4);
+	Board board(TestUtils::CreateBoardStateWithMarks(moves, 'o'));
 	ComputerPlayer player('o');
 	ASSERT_EQ(player.NextMove(board), 8);
 }

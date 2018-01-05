@@ -9,7 +9,12 @@ public:
 	~ComputerPlayer();
 	int NextMove(Board& board);
 private:
-	char OppositeMark();
+	char OppositeMark(char mark);
+	vector<int> Minimax(Board& board, char player, int depth);
 	vector<int> AvailablePositions(Board& board);
+	int Score(Board& board, char player, int depth);
+	vector<int> NewScore(char player);
+	vector<int> CreateScoredMove(int score, int move);
+	bool IsBetterMove(char player, vector<int> scoredMove, int bestScore);
 };
 

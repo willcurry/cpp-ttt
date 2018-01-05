@@ -2,10 +2,11 @@
 #include "Board.h"
 #include "Combinations.h"
 
-Board::Board(vector<char> state, int size)
+Board::Board(vector<char> state, int size, char lastMove)
 {
-	this->size = size;
 	this->state = state;
+	this->size = size;
+	this->lastMove = lastMove;
 	Combinations combinations;
 	winningFormations = combinations.GetAll();
 }
@@ -21,7 +22,7 @@ Board Board::PlaceMark(int position, char mark)
 {
 	vector<char> newState(state);
 	newState[position] = mark;
-	Board newBoard(newState);
+	Board newBoard(newState, this->size, mark);
 	return newBoard;
 }
 
@@ -34,6 +35,11 @@ bool Board::ContainsOnlyOnePlayer(vector<int> positions)
 			return false;
 	}
 	return true;
+}
+
+char Board::GetLastMove()
+{
+	return this->lastMove;
 }
 
 bool Board::PositionIsEmpty(int position)
