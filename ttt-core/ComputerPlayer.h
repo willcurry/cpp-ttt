@@ -8,5 +8,7 @@ public:
 	ComputerPlayer(char mark);
 	~ComputerPlayer();
 	int NextMove(Board& board);
+private:
+	vector<int> AvailablePositions(Board& board);
 };
 

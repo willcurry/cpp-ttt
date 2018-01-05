@@ -9,8 +9,16 @@ ComputerPlayer::~ComputerPlayer()
 
 int ComputerPlayer::NextMove(Board& board)
 {
-	if (board.GetState()[0] == 'x' && board.GetState()[1] == 'x') {
-		return 2;
+	return AvailablePositions(board)[0];
+}
+
+vector<int> ComputerPlayer::AvailablePositions(Board& board)
+{
+	vector<int> positions;
+	for (int i = 0; i < board.GetState().size(); i++) {
+		if (board.PositionIsEmpty(i)) {
+			positions.push_back(i);
+		}
 	}
-	return 0;
+	return positions;
 }
