@@ -151,6 +151,7 @@
     <ClInclude Include="Combinations.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameType.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -159,6 +160,7 @@
     <ClCompile Include="Combinations.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameType.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

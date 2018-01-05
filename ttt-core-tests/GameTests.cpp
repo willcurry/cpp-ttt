@@ -4,14 +4,18 @@
 
 TEST(Game, MakeMoveUpdatesBoard) {
 	Board board(TestUtils::CreateBoardState());
-	Game game(board);
+	Player playerOne('x');
+	Player playerTwo('o');
+	Game game(board, playerOne, playerTwo);
 	game.MakeMove(0);
 	ASSERT_EQ(game.GetBoardState()[0], 'x');
 }
 
 TEST(Game, SwitchesPlayersAfterMove) {
 	Board board(TestUtils::CreateBoardState());
-	Game game(board);
+	Player playerOne('x');
+	Player playerTwo('o');
+	Game game(board, playerOne, playerTwo);
 	game.MakeMove(0);
 	game.MakeMove(1);
 	ASSERT_EQ(game.GetBoardState()[1], 'o');
@@ -23,6 +27,8 @@ TEST(Game, KnowsWhenItsOver) {
 	rowWin.push_back(1);
 	rowWin.push_back(2);
 	Board board(TestUtils::CreateBoardStateWithMarks(rowWin, 'x'));
-	Game game(board);
+	Player playerOne('x');
+	Player playerTwo('o');
+	Game game(board, playerOne, playerTwo);
 	ASSERT_TRUE(game.IsOver());
 }

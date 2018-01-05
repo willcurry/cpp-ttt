@@ -1,17 +1,15 @@
 #include "stdafx.h"
 #include "Game.h"
 
-Game::Game(Board& board)
-{
-	currentBoard = &board;
-	activePlayer = 'x';
-}
-
+Game::Game(Board &board, Player playerOne, Player playerTwo) : 
+	currentBoard(&board), 
+	activePlayer(playerOne), 
+	inactivePlayer(playerTwo) {}
 Game::~Game() {}
 
 void Game::MakeMove(int position)
 {
-	*currentBoard = currentBoard->PlaceMark(position, activePlayer);
+	*currentBoard = currentBoard->PlaceMark(position, activePlayer.GetMark());
 	SwitchPlayers();
 }
 
@@ -27,8 +25,7 @@ bool Game::IsOver()
 
 void Game::SwitchPlayers()
 {
-	if (activePlayer == 'x')
-		activePlayer = 'o';
-	else
-		activePlayer = 'x';
+	Player currentPlayer = activePlayer;
+	activePlayer = inactivePlayer;
+	inactivePlayer = currentPlayer;
 }
