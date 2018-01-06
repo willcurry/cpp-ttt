@@ -9,7 +9,7 @@ Game::~Game() {}
 
 void Game::MakeMove()
 {
-	*currentBoard = currentBoard->PlaceMark(activePlayer->NextMove(), activePlayer->GetMark());
+	*currentBoard = currentBoard->PlaceMark(activePlayer->NextMove(*currentBoard), activePlayer->GetMark());
 	SwitchPlayers();
 }
 

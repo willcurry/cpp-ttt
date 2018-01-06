@@ -7,9 +7,12 @@ ConsolePlayer::~ConsolePlayer()
 {
 }
 
-int ConsolePlayer::NextMove()
+int ConsolePlayer::NextMove(Board& board)
 {
 	int userInput;
 	input >> userInput;
-	return userInput;
+	if (board.PositionIsEmpty(userInput)) {
+		return userInput;
+	}
+	return NextMove(board);
 }

@@ -8,7 +8,7 @@ TestPlayer::TestPlayer(char mark, vector<int> moves) : Player(mark)
 
 TestPlayer::~TestPlayer() {}
 
-int TestPlayer::NextMove()
+int TestPlayer::NextMove(Board& board)
 {
 	nextPosition++;
 	return moves[nextPosition];

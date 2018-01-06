@@ -11,7 +11,7 @@ class ConsolePlayer : public Player
 public:
 	ConsolePlayer(char mark, istream& input);
 	~ConsolePlayer();
-	int NextMove();
+	int NextMove(Board& board);
 private:
 	istream& input;
 };
