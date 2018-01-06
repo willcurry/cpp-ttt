@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleGameTests.cpp" />
+    <ClCompile Include="ConsolePlayerTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ttt-console\ttt-console.vcxproj">

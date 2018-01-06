@@ -8,7 +8,7 @@ TEST(ConsoleGame, DisplaysBoard) {
 	Player playerOne('x');
 	Player playerTwo('o');
 	Game game(board, playerOne, playerTwo);
-	ConsoleGameType consoleGame(game, stream, stream);
+	ConsoleGameType consoleGame(game, stream);
 	consoleGame.DisplayBoard();
 	EXPECT_EQ(stream.str(), "---------");
 }

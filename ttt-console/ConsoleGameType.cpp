@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "ConsoleGameType.h"
 
-ConsoleGameType::ConsoleGameType(Game game, ostream &output, istream &input) : output(output), input(input), game(game) {}
+ConsoleGameType::ConsoleGameType(Game game, ostream &output) : game(game), output(output) {}
 
 ConsoleGameType::~ConsoleGameType()
 {
@@ -20,8 +20,6 @@ void ConsoleGameType::Start()
 {
 	while (!game.IsOver()) {
 		DisplayBoard();
-		int userInput;
-		input >> userInput;
 		game.MakeMove();
 	}
 }

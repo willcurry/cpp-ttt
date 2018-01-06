@@ -6,19 +6,17 @@
 
 using std::vector;
 using std::ostream;
-using std::istream;
 using std::string;
 
 class ConsoleGameType : public GameType
 {
 public:
-	ConsoleGameType(Game game, ostream& output, istream& input);
+	ConsoleGameType(Game game, ostream& output);
 	~ConsoleGameType();
 	void DisplayBoard();
 	void Start();
 private:
 	ostream& output;
-	istream& input;
 	Game game;
 };
 
